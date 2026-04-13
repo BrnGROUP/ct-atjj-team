@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osoto Gari | Biomecânica & Técnica Premium</title>
+    <meta name="description" content="Manual completo de Osoto Gari: Biomecânica, execução técnica e estrutura de aula para Jiu-Jitsu e Judô.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #d4af37; /* Gold */
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --glass: rgba(255, 255, 255, 0.03);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- Header & Hero --- */
+        header {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)), url('img/Osoto_Gari.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 5rem);
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--primary);
+            font-weight: 400;
+            max-width: 600px;
+        }
+
+        /* --- Container --- */
+        .container {
+            max-width: 1200px;
+            margin: -60px auto 4rem;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* --- Cards --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.1);
+        }
+
+        .card h2 {
+            border-left: 4px solid var(--primary);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        /* --- Icons & Stats --- */
+        .objective-card {
+            background: linear-gradient(135deg, var(--bg-card), #1e1b4b);
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .concept-final {
+            background: linear-gradient(135deg, #1e293b, var(--accent));
+            color: white;
+            text-align: center;
+        }
+
+        /* --- Step Gallery --- */
+        .steps-section {
+            margin-top: 4rem;
+        }
+
+        .steps-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .steps-header h2 {
+            display: inline-block;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+            font-size: 2.5rem;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .step-item {
+            background: var(--bg-card);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .step-item:hover {
+            transform: scale(1.03);
+        }
+
+        .step-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            background: rgba(0,0,0,0.2);
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .step-content {
+            padding: 1.5rem;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--bg-dark);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        /* --- Biomechanics List --- */
+        .bio-list {
+            list-style: none;
+        }
+
+        .bio-list li {
+            margin-bottom: 1.25rem;
+            position: relative;
+            padding-left: 1.75rem;
+            text-align: left;
+        }
+
+        .bio-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* --- Lesson Plan Table --- */
+        .lesson-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .lesson-table td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .time-pill {
+            background: var(--primary);
+            color: var(--bg-dark);
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        /* --- Highlights --- */
+        .highlight {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .accent-text {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header { height: 50vh; }
+            .container { margin-top: -30px; }
+            .objective-card { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header role="banner">
+        <h1 class="hero-title animate">🥋 Osoto Gari</h1>
+        <p class="hero-subtitle animate" style="animation-delay: 0.2s;">A excelência técnica através da biomecânica aplicada.</p>
+    </header>
+
+    <main class="container">
+        
+        <!-- Objetivo Section -->
+        <section class="grid" style="margin-bottom: 2rem;">
+            <div class="card objective-card animate" id="objetivo" style="animation-delay: 0.3s;">
+                <div style="font-size: 3rem;">🎯</div>
+                <div>
+                    <h2>Objetivo da Aula</h2>
+                    <p>Dominar o <span class="highlight">Osoto Gari</span> (Grande Ceifada Exterior) através do entendimento biomecânico, refinando o <span class="highlight">tempo de ataque</span> e a coordenação motora para uma projeção limpa e eficiente.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid">
+            <!-- Biomecânica -->
+            <div class="card animate" style="animation-delay: 0.4s;">
+                <h2>🧠 Biomecânica</h2>
+                <ul class="bio-list">
+                    <li><span class="highlight">Centro de Gravidade:</span> Deslocar o "core" do adversário para trás, além da sua base.</li>
+                    <li><span class="highlight">Base de Sustentação:</span> Remover o suporte principal (perna de apoio) no momento do peso.</li>
+                    <li><span class="highlight">Alavanca Corporal:</span> Braços fazem a tração (puxada), tronco faz a compressão e a perna faz a varredura.</li>
+                    <li><span class="highlight">Direção da Força:</span> Aplicação vetorial na <span class="accent-text">diagonal posterior</span>.</li>
+                </ul>
+            </div>
+
+            <!-- Fases Técnicas -->
+            <div class="card animate" style="animation-delay: 0.5s;">
+                <h2>🥋 Fundamentos das Fases</h2>
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 0.2rem;">1. Kuzushi</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-dim);">Desequilíbrio: Abrir a guarda e inclinar o oponente.</p>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 0.2rem;">2. Tsukuri</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-dim);">Entrada: Ajuste de proximidade e contato peito-com-peito.</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 0.2rem;">3. Kake</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-dim);">Execução: A varredura explosiva e finalização da queda.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeria de Passos -->
+        <section class="steps-section">
+            <div class="steps-header animate">
+                <h2>Análise Técnica Sequencial</h2>
+                <p style="color: var(--text-dim); margin-top: 0.5rem;">Estudo detalhado do movimento passo a passo</p>
+            </div>
+
+            <div class="steps-grid">
+                <!-- Step 1 -->
+                <div class="step-item animate" style="animation-delay: 0.1s;">
+                    <img src="img/Osoto_Gari - 01.png" alt="Osoto Gari Passo 1">
+                    <div class="step-content">
+                        <span class="step-number">1</span>
+                        <h3>Postura</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-dim);">Início do contato e busca pela pegada dominante.</p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="step-item animate" style="animation-delay: 0.2s;">
+                    <img src="img/Osoto_Gari - 02.png" alt="Osoto Gari Passo 2">
+                    <div class="step-content">
+                        <span class="step-number">2</span>
+                        <h3>Deslocamento</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-dim);">Aproximação da perna de ataque e início do desequilíbrio.</p>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="step-item animate" style="animation-delay: 0.3s;">
+                    <img src="img/Osoto_Gari - 03.png" alt="Osoto Gari Passo 3">
+                    <div class="step-content">
+                        <span class="step-number">3</span>
+                        <h3>Ajuste</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-dim);">Perna de base posicionada ao lado do adversário.</p>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div class="step-item animate" style="animation-delay: 0.4s;">
+                    <img src="img/Osoto_Gari - 04.png" alt="Osoto Gari Passo 4">
+                    <div class="step-content">
+                        <span class="step-number">4</span>
+                        <h3>Elevação</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-dim);">Preparação da perna de varredura (balanço).</p>
+                    </div>
+                </div>
+                <!-- Step 5 -->
+                <div class="step-item animate" style="animation-delay: 0.5s;">
+                    <img src="img/Osoto_Gari - 05.png" alt="Osoto Gari Passo 5">
+                    <div class="step-content">
+                        <span class="step-number">5</span>
+                        <h3>Ataque</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-dim);">Início da ceifada com contato total do tronco.</p>
+                    </div>
+                </div>
+                <!-- Step 6 -->
+                <div class="step-item animate" style="animation-delay: 0.6s;">
+                    <img src="img/Osoto_Gari - 06.png" alt="Osoto Gari Passo 6">
+                    <div class="step-content">
+                        <span class="step-number">6</span>
+                        <h3>Projeção</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-dim);">O momento da queda e controle do oponente.</p>
+                    </div>
+                </div>
+                <!-- Step 7 -->
+                <div class="step-item animate" style="animation-delay: 0.7s;">
+                    <img src="img/Osoto_Gari - 07.png" alt="Osoto Gari Passo 7">
+                    <div class="step-content">
+                        <span class="step-number">7</span>
+                        <h3>Finalização</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-dim);">Acompanhamento no solo e estabilização.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lesson Plan & Gamification -->
+        <section class="grid" style="margin-top: 4rem;">
+            <div class="card animate">
+                <h2>📅 Cronograma da Aula</h2>
+                <table class="lesson-table">
+                    <tr><td>Aquecimento Articular</td><td><span class="time-pill">10 min</span></td></tr>
+                    <tr><td>Uchi-komi (Fundamentos)</td><td><span class="time-pill">10 min</span></td></tr>
+                    <tr><td>Demonstração Técnica</td><td><span class="time-pill">15 min</span></td></tr>
+                    <tr><td>Drills de Movimentação</td><td><span class="time-pill">10 min</span></td></tr>
+                    <tr><td>Dinâmica Lúdica</td><td><span class="time-pill">10 min</span></td></tr>
+                    <tr><td>Feedback & Calma</td><td><span class="time-pill">05 min</span></td></tr>
+                </table>
+            </div>
+
+            <div class="card animate" style="background: linear-gradient(135deg, var(--bg-card), #312e81);">
+                <h2>🎮 Gamificação</h2>
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">Derrubador de Gigantes</h3>
+                <p style="margin-bottom: 1rem;">O "Gigante" deve manter a base enquanto os "Ceifadores" aplicam o timing correto do Osoto Gari.</p>
+                <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 10px;">
+                    <p>⭐ <span class="highlight">1 Ponto:</span> Quebra de equilíbrio (Kuzushi)</p>
+                    <p>🏆 <span class="highlight">2 Pontos:</span> Queda controlada (Ippon)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card concept-final animate" style="margin-top: 2rem;">
+            <p style="font-size: 1.5rem; font-weight: 800; font-family: 'Outfit';">
+                NÃO É FORÇA → <span style="color: var(--bg-dark); background: var(--primary); padding: 0 10px;">É EQUILÍBRIO</span>
+            </p>
+            <p style="font-size: 1.5rem; font-weight: 800; font-family: 'Outfit'; margin-top: 0.5rem;">
+                NÃO É VELOCIDADE → <span style="color: var(--bg-dark); background: var(--primary); padding: 0 10px;">É TEMPO</span>
+            </p>
+        </section>
+
+    </main>
+
+    <footer style="text-align: center; padding: 2rem; color: var(--text-dim); font-size: 0.8rem;">
+        &copy; 2026 Claudio Bruno - Jiu-Jitsu Nage Waza Series
+    </footer>
+
+</body>
+
+</html>
+highlight">Não é velocidade → é tempo</span></p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
